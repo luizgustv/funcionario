@@ -59,7 +59,7 @@ public class FuncionarioController {
 	}
 	
 	@GetMapping("/{cidade}/{salario}")
-	//pesquisas complexas
+	//para realizar pesquisas mais complexas
 	public ResponseEntity<List<Funcionario>> getFuncionarioByCidAndSal(@PathVariable(value = "cidade") String cidade, @PathVariable(value = "salario") Float salario){
 		List<Funcionario> funcionarios = funcionarioService.findByCidadeAndSalarioGreaterThan(cidade, salario);
 		return new ResponseEntity<List<Funcionario>>(funcionarios, HttpStatus.OK);
